@@ -1,0 +1,17 @@
+{
+  "environment": "prod",
+  "workspace": {
+    "url": "https://adb-yyy.azuredatabricks.net",
+    "token": "${DATABRICKS_PROD_TOKEN}"
+  },
+  "unity_catalog": {
+    "catalog_name": "prod_catalog",
+    "schema_name": "prod_schema",
+    "storage_location": "abfss://prod-container@prodstorage.dfs.core.windows.net/data",
+    "external_table_path": "abfss://prod-container@prodstorage.dfs.core.windows.net/external-tables"
+  },
+  "paths": {
+    "notebooks_path": "/Workspace/Users/prod",
+    "data_path": "abfss://prod-data@prodstorage.dfs.core.windows.net"
+  }
+}
