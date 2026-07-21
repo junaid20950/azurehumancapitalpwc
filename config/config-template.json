@@ -1,0 +1,17 @@
+{
+  "environment": "${ENVIRONMENT}",
+  "workspace": {
+    "url": "${WORKSPACE_URL}",
+    "token": "${WORKSPACE_TOKEN}"
+  },
+  "unity_catalog": {
+    "catalog_name": "${CATALOG_NAME}",
+    "schema_name": "${SCHEMA_NAME}",
+    "storage_location": "${STORAGE_LOCATION}",
+    "external_table_path": "${EXTERNAL_TABLE_PATH}"
+  },
+  "paths": {
+    "notebooks_path": "${NOTEBOOKS_PATH}",
+    "data_path": "${DATA_PATH}"
+  }
+}
