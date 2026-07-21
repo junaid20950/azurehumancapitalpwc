@@ -1,7 +1,7 @@
 {
   "environment": "dev",
   "workspace": {
-    "url": "https://adb-xxx.azuredatabricks.net",
+    "url": "https://adb-7405607783814463.3.azuredatabricks.net",
     "token": "${DATABRICKS_DEV_TOKEN}"
   },
   "unity_catalog": {
