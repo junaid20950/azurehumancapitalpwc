@@ -23,28 +23,16 @@ jobs:
         run: |
           pip install databricks-cli pyyaml
       
-      - name: Transform configuration for Production
-        run: |
-          python scripts/transform-config.py prod
-      
       - name: Deploy Notebooks to Databricks
         run: |
           python scripts/deploy-notebooks.py prod
         env:
-          DATABRICKS_HOST: ${{ secrets.DATABRICKS_PROD_HOST }}
           DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_PROD_TOKEN }}
       
-      - name: Deploy Unity Catalog DDL
-        run: |
-          python scripts/deploy-unity-catalog.py prod
-        env:
-          DATABRICKS_HOST: ${{ secrets.DATABRICKS_PROD_HOST }}
-          DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_PROD_TOKEN }}
-      
-      - name: Create Deployment Record
+      - name: Deployment Summary
         if: always()
         run: |
           echo "✓ Production deployment completed"
           echo "Environment: Production"
           echo "Branch: main"
-          echo "Timestamp: $(date)" >> deployment-log.txt
+          echo "Timestamp: $(date)"
