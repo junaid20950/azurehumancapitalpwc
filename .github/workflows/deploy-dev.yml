@@ -23,22 +23,10 @@ jobs:
         run: |
           pip install databricks-cli pyyaml
       
-      - name: Transform configuration for Development
-        run: |
-          python scripts/transform-config.py dev
-      
       - name: Deploy Notebooks to Databricks
         run: |
           python scripts/deploy-notebooks.py dev
         env:
-          DATABRICKS_HOST: ${{ secrets.DATABRICKS_DEV_HOST }}
-          DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_DEV_TOKEN }}
-      
-      - name: Deploy Unity Catalog DDL
-        run: |
-          python scripts/deploy-unity-catalog.py dev
-        env:
-          DATABRICKS_HOST: ${{ secrets.DATABRICKS_DEV_HOST }}
           DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_DEV_TOKEN }}
       
       - name: Deployment Summary
@@ -47,4 +35,4 @@ jobs:
           echo "✓ Development deployment completed"
           echo "Environment: Development"
           echo "Branch: dev"
-          echo "Timestamp: $(date)" >> deployment-log.txt
+          echo "Timestamp: $(date)"
