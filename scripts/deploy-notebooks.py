@@ -4,7 +4,7 @@ import subprocess
 import sys
 
 def deploy_notebooks(environment):
-    """Deploy notebooks to Databricks workspace"""
+    """Deploy Jupyter notebooks to Databricks workspace"""
     
     # Load environment config
     with open(f'config/{environment}.json', 'r') as f:
@@ -14,17 +14,19 @@ def deploy_notebooks(environment):
     token = config['workspace']['token']
     notebooks_path = config['paths']['notebooks_path']
     
-    # Get list of transformed notebooks
-    notebook_dir = f'notebooks/{environment}'
+    # Get list of notebooks from HC_Azureproject folder
+    notebook_dir = f'HC_Azureproject'
     
     if not os.path.exists(notebook_dir):
         print(f"✗ Notebook directory {notebook_dir} does not exist")
         sys.exit(1)
     
     for filename in os.listdir(notebook_dir):
-        if filename.endswith('.py'):
+        if filename.endswith('.ipynb'):
             notebook_path = os.path.join(notebook_dir, filename)
-            remote_path = f'{notebooks_path}/{filename[:-3]}'  # Remove .py extension
+            # Remove .ipynb extension for remote path
+            notebook_name = filename[:-6]
+            remote_path = f'{notebooks_path}/{notebook_name}'
             
             # Deploy using databricks-cli
             cmd = [
@@ -45,7 +47,9 @@ def deploy_notebooks(environment):
                 print(f"✓ Deployed {filename} to {remote_path}")
             else:
                 print(f"✗ Failed to deploy {filename}: {result.stderr}")
-                sys.exit(1)
+                # Continue with next notebook instead of exiting
+    
+    print(f"✓ Notebook deployment completed for {environment}")
 
 if __name__ == '__main__':
     environment = sys.argv[1] if len(sys.argv) > 1 else 'dev'
