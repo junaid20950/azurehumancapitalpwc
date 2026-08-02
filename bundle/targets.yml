@@ -1,0 +1,15 @@
+targets:
+  dev:
+    default: true
+    mode: development
+    workspace:
+      host: https://adb-7405612763607356.16.azuredatabricks.net
+      root_path: /Workspace/Users/${workspace.current_user.userName}/.bundle/${bundle.name}/${bundle.target}
+      file_path: /Workspace/Users/${workspace.current_user.userName}/.bundle/${bundle.name}/${bundle.target}/files
+
+  prod:
+    mode: production
+    workspace:
+      host: https://adb-7405612995144229.9.azuredatabricks.net
+      root_path: /Workspace/Users/363ayaz@gmail.com/.bundle/${bundle.name}/${bundle.target}
+      file_path: /Workspace/Users/363ayaz@gmail.com/.bundle/${bundle.name}/${bundle.target}/files
