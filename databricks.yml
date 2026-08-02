@@ -1,0 +1,20 @@
+bundle:
+  name: hc-azure-project
+
+include:
+  - bundle/*.yml
+
+sync:
+  include:
+    - HC_Azureporject/**
+    - config/**
+    - scripts/**
+  exclude:
+    - .git/**
+    - .github/**
+    - "**/__pycache__/**"
+    - "**/.ipynb_checkpoints/**"
+
+workspace:
+  root_path: /Workspace/Users/${workspace.current_user.userName}/.bundle/${bundle.name}/${bundle.target}
+  file_path: /Workspace/Users/${workspace.current_user.userName}/.bundle/${bundle.name}/${bundle.target}/files
