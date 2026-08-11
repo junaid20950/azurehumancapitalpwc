@@ -2,19 +2,17 @@ bundle:
   name: hc-azure-project
 
 include:
-  - bundle/*.yml
+  - src/*.yml
 
-sync:
-  include:
-    - HC_Azureporject/**
-    - config/**
-    - scripts/**
-  exclude:
-    - .git/**
-    - .github/**
-    - "**/__pycache__/**"
-    - "**/.ipynb_checkpoints/**"
+targets:
+  # Development Environment Configuration
+  dev:
+    workspace:
+      host: https://adb-7405612763607356.16.azuredatabricks.net
+      root_path: /Workspace/Shared/HC_Azureproject/dev
 
-workspace:
-  root_path: /Workspace/Users/${workspace.current_user.userName}/.bundle/${bundle.name}/${bundle.target}
-  file_path: /Workspace/Users/${workspace.current_user.userName}/.bundle/${bundle.name}/${bundle.target}/files
+  # Production Environment Configuration
+  prod:
+    workspace:
+      host: https://adb-7557140150243369.9.azuredatabricks.net
+      root_path: /Workspace/Shared/HC_Azureproject/prod
