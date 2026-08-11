@@ -14,5 +14,5 @@ targets:
   # Production Environment Configuration
   prod:
     workspace:
-      host: https://adb-7557140150243369.9.azuredatabricks.net
+      host: https://adb-7405612995144229.9.azuredatabricks.net
       root_path: /Workspace/Shared/HC_Azureproject/prod
