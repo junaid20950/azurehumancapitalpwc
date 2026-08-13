@@ -5,7 +5,7 @@ This bundle is intentionally deployment-only.
 It does not create Databricks Jobs or Lakeflow Spark Declarative Pipelines because this project is orchestrated by Azure Data Factory (ADF), which calls Databricks notebooks directly.
 
 What this bundle does:
-- Deploys the HC_Azureporject notebooks and supporting config/scripts from this repository.
+- Deploys the HC_Azureproject notebooks and supporting config/scripts from this repository.
 - Defines a dev target for the current workspace.
 - Defines a prod target placeholder for a future production workspace.
 - Keeps bundle-specific configuration separate from notebook business logic.
