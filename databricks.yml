@@ -4,13 +4,6 @@ bundle:
 include:
   - src/*.yml
 
-artifacts:
-  default:
-    type: whl
-    path: .
-    files:
-      - source: ./src
-
 targets:
   # Development Environment Configuration
   dev:
@@ -24,3 +17,8 @@ targets:
     workspace:
       host: https://adb-7405616149222315.15.azuredatabricks.net/
       root_path: /Workspace/Repos/pwchccapital_project/.bundle/${bundle.name}/prod
+
+sync:
+  include:
+    - ./scripts/**/*
+    - ./config/**/*
