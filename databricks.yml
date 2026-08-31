@@ -8,11 +8,12 @@ targets:
   # Development Environment Configuration
   dev:
     workspace:
-      host: https://adb-7405612763607356.16.azuredatabricks.net
-      root_path: /Workspace/Shared/HC_Azureproject/dev
+      host: https://adb-7405606441244433.13.azuredatabricks.net/
+      root_path: /Workspace/Repos/pwchccapital_project/.bundle/${bundle.name}/dev
+      file_path: /Workspace/Users/${workspace.current_user.userName}/.bundle/${bundle.name}/${bundle.target}/files
 
   # Production Environment Configuration
   prod:
     workspace:
-      host: https://adb-7405612995144229.9.azuredatabricks.net
-      root_path: /Workspace/Shared/HC_Azureproject/prod
+      host: https://adb-7405616149222315.15.azuredatabricks.net/
+      root_path: /Workspace/Repos/pwchccapital_project/.bundle/${bundle.name}/prod
