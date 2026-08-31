@@ -4,6 +4,9 @@ bundle:
 include:
   - src/*.yml
 
+files:
+  - source: ./src
+
 targets:
   # Development Environment Configuration
   dev:
