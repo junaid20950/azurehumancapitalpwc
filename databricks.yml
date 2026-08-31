@@ -4,8 +4,12 @@ bundle:
 include:
   - src/*.yml
 
-files:
-  - source: ./src
+artifacts:
+  default:
+    type: whl
+    path: .
+    files:
+      - source: ./src
 
 targets:
   # Development Environment Configuration
