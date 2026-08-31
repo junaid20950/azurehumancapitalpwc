@@ -10,8 +10,7 @@ targets:
     workspace:
       host: https://adb-7405606441244433.13.azuredatabricks.net/
       root_path: /Workspace/Repos/pwchccapital_project/.bundle/${bundle.name}/dev
-      file_path: /Workspace/Users/${workspace.current_user.userName}/.bundle/${bundle.name}/${bundle.target}/files
-
+      
   # Production Environment Configuration
   prod:
     workspace:
