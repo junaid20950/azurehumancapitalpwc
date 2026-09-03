@@ -9,13 +9,13 @@ targets:
   dev:
     workspace:
       host: https://adb-7405606441244433.13.azuredatabricks.net/
-      root_path: /Workspace/Repos/pwchccapital_project/.bundle/${bundle.name}/dev/${bundle.git.branch}
+      root_path: /Workspace/Repos/azurehumancapitalpwc/.bundle/${bundle.name}/dev/${bundle.git.branch}
       
   # Production Environment Configuration
   prod:
     workspace:
       host: https://adb-7405616149222315.15.azuredatabricks.net/
-      root_path: /Workspace/Repos/pwchccapital_project/.bundle/${bundle.name}/prod
+      root_path: /Workspace/Repos/azurehumancapitalpwc/.bundle/${bundle.name}/prod
 
 sync:
   include:
