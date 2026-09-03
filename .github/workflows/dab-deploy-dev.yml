@@ -3,7 +3,7 @@ name: Deploy DAB to Development
 on:
   push:
     branches:
-      - dev
+      - main
   workflow_dispatch:
 
 jobs:
