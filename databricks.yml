@@ -15,7 +15,7 @@ targets:
   prod:
     workspace:
       host: https://adb-7405616149222315.15.azuredatabricks.net/
-      root_path: /Workspace/Repos/azurehumancapitalpwc/.bundle/${bundle.name}/prod
+      root_path: /Workspace/Repos/azurehumancapitalpwc/.bundle/${bundle.name}/prod/main
 
 sync:
   include:
