@@ -8,7 +8,7 @@ targets:
   # Development Environment Configuration
   dev:
     workspace:
-      host: https://adb-7405606441244433.13.azuredatabricks.net/
+      host: https://adb-7405611570130008.8.azuredatabricks.net/
       root_path: /Workspace/Repos/azurehumancapitalpwc/.bundle/${bundle.name}/dev/${bundle.git.branch}
       
   # Production Environment Configuration
